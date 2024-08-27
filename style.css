@@ -1,0 +1,306 @@
+/* font-family: "Roboto", sans-serif;
+font-family: "Inconsolata", monospace; */
+
+/* Marcando algunas cosas de toda la pagina para que no tome las caracteristicas default */
+/* NORMALIZACIÓN: */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*Esto mantiene el alto y el ancho a pesar del padding y border */
+    font-family: "Inconsolata", monospace;
+    list-style: none; /*Esto lo que va a hacer es quitar los puntos y deco de las listas que haya*/
+    text-decoration: none; /*Esto quita el subrayado de los enlaces*/
+    color: white;
+}
+
+body{
+    background-color: black; /*TO DO: Borrar cuando tengamos el fondo final*/
+}
+
+header{
+    position: fixed; /*Esto hace que el header se quede fijo en la parte superior*/
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+
+}
+
+.navlist{
+    display: flex;
+}
+
+.navlist a {
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+
+}
+
+/* #menu-icon {
+    display: none; Lo pongo en none para que solo se vea cuando la pagina esta colpsada de forma horizontal
+} */
+
+#menu-icon {
+    display: none;
+    font-size: 35px;
+    z-index: 101; /*Para que este sobre el header*/
+    cursor: pointer; /*Para que aparezca la manito cuando estamos con el mouse encima*/
+
+}
+
+#menu-toggle {
+    display: none; /*Para que no se vea el checkbox*/
+}
+
+#menu-icon-action {
+    display: none; /*Para que no se le pueda dar clikck*/
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg,#4e4b31 0%, #647038 25%, #131313 75%); /*Primero se pone el angulo al que queremos que apunte el degradado, y luego se eligen los colores y al lado donde empieza cada color por ej 0% (al cominezo). Y de esta manera tenemos un fondo gradiente*/
+    position: relative; /*Para que sea relarivo el contenedor, nos permite usar top, bottom, lef y right*/
+    display: grid; /*Para que se ponga de un lado el texto y del otro lado la foto (Para que el hero se pueda dividir en dos columnas)*/
+    grid-template-columns: 1fr 1fr; /*Las dos columnas*/
+    align-items: center; /*Para alinear verticalmente el hero*/
+    gap: 2rem; /*Para que haya espacio de 2 rem estre las dos columnas*/
+}
+
+section{
+    padding: 0 8%; /*Nada de padding vertical y 8% horizonatl*/
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+
+}
+
+.hero-text h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    line-height: 1.2; /*Establece la distancia entre lineas de texto*/
+    margin: 0 0 30px; /*Arriba, derecha izquierda y 30px abajo*/
+
+
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+
+}
+
+.hero-img img {
+    width: 500px;
+    margin: 10% 0 0; /*10% a lo de alto, 0 (derecha) 0 (abajo) y el cuarto seria a la izquierda (pero lo saque porque mi imagen es muy chica*/
+    height: auto;
+    transition: all 1s linear; /*Esto hace que la trancision sea lineal*/
+}
+
+.hero-img img:hover {
+    width: 520px;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    display: inline-block; /*Esto va a permitir que se le pueda dar a los a un ancho y un alto*/
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px; /*Bastante para que se asemeje a un boton*/
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase; /*Para que sea mayuscula*/
+    transition: all 1s ease ;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white; /*Que hara que aparezca porque antes el borde era transparente*/
+    transform: translateX(8px); /*Significa que en el eje de la x (horizontal) se va a mover 8px*/
+}
+
+.hero-text a.videos {
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px; /*Para que se separen un poco los a*/
+
+}
+
+.hero-text a.videos i {
+    vertical-align: middle; /*Hace que el icono se centre al texto si no estaba como por arriba*/
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute; /*Se pone para poder modificar la posicion*/
+    top: 50vh; /*Los iconos van a estar ubicados a la mitad verticalmente de lo que se ve con 50vh*/
+    padding: 0 3%;
+    transform: translateY(-50%); /*Para que se traslade un poco hacia arriba*/
+}
+
+.icons i {
+    display: block; /*Para que cada uno ocupe la tootalidad y se pongan uno abajo del otro*/
+    margin: 26px 0; /*Verticalmente margen de 26px y horizontalemnte nada (0)*/
+    font-size: 24px;
+    transition: all 1s ease;
+} 
+
+.icons i:hover {
+    color: #4d4d4d;
+    transform: translateY(-5px); /*En el eje vertical, ira 5px mas arriba al estar encima*/
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%; /*Para que este un 6% mas arriba que el borde de abajo*/
+    right: 3%; /*Para que este un 3% mas a la izquierda del borde derecho*/
+}
+
+.scroll-down i {
+    display: block; /*Para que este en bloque*/
+    padding: 12px;
+    font-size: 25px;
+    background-color: rgb(107, 121, 58);
+    border-radius: 30px;
+    transition: all 1s ease;
+}
+
+.scroll-down i:hover { 
+    transform: translateY(-5px); /*Hara que el icono de scroll se mueva hacia arriba a -5px*/
+}
+
+/*Aca vamos a hacer mediaqueries para que la web sea responsiva*/
+@media (max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: 2s;
+    }
+
+    .hero-text {
+        padding-top: 0; /*Para que se vaya un poquito mas hacia arriba*/
+    }
+
+    .hero-text p {
+        font-size: 70%; /*Para que tambien se vaya achicando a medida que vamos achicaando la pagina*/
+    }
+
+    .hero-img {
+        text-align: center; /*Para que se vaya yendose al centro*/
+    }
+
+    .hero-img img {
+        width: 80%; /*Para que se vaya achicando un poquito*/
+        margin: 10% 0 0 10%; 
+    }
+
+    .icons {
+        display: none; /*Sacamos iconos cuando se achique la pagina a menos de 992*/
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width:811px) {
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .hero-text {
+        text-align: center; /*Se centrara todo para el modo celular*/
+        padding-top: 100px;
+    }
+
+    .hero-img img {
+        margin: 0;
+    }
+
+    /* Para que la imagen se vaya para abajo vamos a mantener el grid pero vamos a sacar una columna para 
+    que se hagan dos filas cuando la pantalla sse achica */
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    /*Para que la barra de navegacion se ponga por encima (truquito)*/
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%; /*De esta manera se van a esconder los a de la navegacion, IMPORTANTE !!!!! */
+        height: 200px;
+        width: 180px;
+        background-color: #4e4b31ef; 
+        display: flex;
+        flex-direction: column; /*Para que se comporte como columna*/
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 0.5s ease-out;
+    }
+
+    .navlist a{
+        /* margin-left: 0; Como pusimos margen vamos a sacar margin-left */
+        display: block;
+        margin: 7px 0; /*7px margen vertical y 0 horizontal*/
+
+    }
+
+
+    /* AHORA FALTA QUE AL HACER CLICK EN NUESTRO ICONO NAVEGADOR PARA CELULARES SE PUEDE
+    CLICKEAR Y APAREZCA LA NAVEGACION Y QUE SE CIERRE */
+    #menu-toggle:checked + label.menu-icon-action + ul {
+        right: 0;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
