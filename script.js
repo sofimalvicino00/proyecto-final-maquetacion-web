@@ -1,5 +1,5 @@
-const menu = document.querySelector("#menu-icon") // aca estamos seleccionando por id
-const navList = document.querySelector(".navlist") // y aca estamos seleccionando por clase
+const menu = document.querySelector("#menu-icon") 
+const navList = document.querySelector(".navlist") 
 
 menu.onclick = () => {
     menu.classList.toggle('bx-x')
