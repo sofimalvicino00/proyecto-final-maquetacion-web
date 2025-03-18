@@ -54,15 +54,15 @@ header{
 
 }
 
-/* #menu-icon {
-    display: none; Lo pongo en none para que solo se vea cuando la pagina esta colpsada de forma horizontal
-} */
+#menu-icon {
+    display: none; /*Lo pongo en none para que solo se vea cuando la pagina esta colpsada de forma horizontal*/
+} 
 
 #menu-icon {
-    display: none;
     font-size: 35px;
     z-index: 101; /*Para que este sobre el header*/
     cursor: pointer; /*Para que aparezca la manito cuando estamos con el mouse encima*/
+    display: none;
 
 }
 
@@ -266,7 +266,7 @@ section{
         right: -100%; /*De esta manera se van a esconder los a de la navegacion, IMPORTANTE !!!!! */
         height: 200px;
         width: 180px;
-        background-color: #4e4b31ef;
+        background-color: #4e4b31ef; 
         display: flex;
         flex-direction: column; /*Para que se comporte como columna*/
         align-items: center;
@@ -278,17 +278,11 @@ section{
         /* margin-left: 0; Como pusimos margen vamos a sacar margin-left */
         display: block;
         margin: 7px 0; /*7px margen vertical y 0 horizontal*/
-
     }
 
-
-    /* AHORA FALTA QUE AL HACER CLICK EN NUESTRO ICONO NAVEGADOR PARA CELULARES SE PUEDE
-    CLICKEAR Y APAREZCA LA NAVEGACION Y QUE SE CIERRE */
-    #menu-toggle:checked + label.menu-icon-action + ul {
+    .navlist.open{
         right: 0;
     }
-
-
 
 }
 
